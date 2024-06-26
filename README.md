@@ -48,7 +48,6 @@ Field:
 Cow005 played 38
 Cow006 played 44
 New Field:
-Field: 
 12 
 57
 34 35 37 38 44
@@ -112,6 +111,7 @@ Field:
 Cow006 played 1
 Cow005 played 39
 Cow006 choose row 4
+Cow006 took 7
 New Field:
 12 39
 57
