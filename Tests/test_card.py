@@ -1,6 +1,5 @@
-import pytest
 import random
-from Card_class import Card
+from Classes.Card_class import Card
 
 def test_Card():
     x = random.sample(range(0, 105), 5)

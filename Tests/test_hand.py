@@ -1,7 +1,6 @@
-import pytest
 import random
-from Card_class import Card
-from Hand_class import Hand
+from Classes.Card_class import Card
+from Classes.Hand_class import Hand
 
 def test_Hand():
     x = random.sample(range(0, 105), 5)
