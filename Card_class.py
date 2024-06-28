@@ -1,3 +1,4 @@
+import json
 class Card:
     MAX_NUMBER = 104
 
@@ -19,3 +20,7 @@ class Card:
 
     def score(self, player):
         player.points += self.point
+
+    #def save(self):
+        #a = dict("")
+
