@@ -1,5 +1,9 @@
+from Card_class import Card
+
+
 class Row:
-    def __init__(self, *cards):
+    def __init__(self, index, *cards):
+        self.index = index
         self.cards = []
         for i in cards:
             self.cards.append(i)
@@ -10,14 +14,18 @@ class Row:
             cards.append(i.value)
         return str(cards)
 
-    def add_card(self, Card):
-        self.cards.append(Card)
+    def add_card(self, card):
+        self.cards.append(card)
 
-    def remove_cards(self, Card):
-        self.cards.remove(Card)
+    def remove_cards(self, card):
+        self.cards.remove(card)
 
     def score(self):
         summ = 0
         for i in self.cards:
             summ += i.point
         return summ
+
+
+
+

@@ -22,29 +22,35 @@
 Пусть есть два игрока: Cow005, Cow006
 
 ```
+It's Round 2, Cow005!
 Field: 
 12 
 57
 34 35 37
 7
-Cow005: 38 39 48 56 74 84 89 98 100
+Your cards: 38 39 48 56 74 84 89 98 100
 Points = 0
-Cow005 play 38
+Choose a card to play
+38
 -----
+It's Round 2, Cow006!
 Field: 
 12 
 57
 34 35 37
 7
-Cow006: 1 6 32 44 46 59 65 73 89
+Your cards: 1 6 32 44 46 59 65 73 89
 Points = 0
-Cow006 play 44
+Choose a card to play
+44
 -----
+End of Round 2
 Field: 
 12 
 57
 34 35 37
 7
+
 Cow005 played 38
 Cow006 played 44
 New Field:
@@ -53,47 +59,63 @@ New Field:
 34 35 37 38 44
 7
 -----
+It's Round 3, Cow005!
 Field: 
 12 
 57
 34 35 37 38 44
 7
-Cow005: 39 48 56 74 84 89 98 100
+Your cards: 39 48 56 74 84 89 98 100
 Points = 0
-Cow005 play 48
+Choose a card to play
+48
 -----
+It's Round 3, Cow006!
 Field: 
 12 
 57
 34 35 37 38 44
 7
-Cow006: 1 6 32 46 59 65 73 89
+Your cards: 1 6 32 46 59 65 73 89
 Points = 0
-Cow006 play 46
+Choose a card to play
+46
 -----
+End of Round 3
 Field: 
 12 
 57
 34 35 37 38 44
 7
+
 Cow006 played 46
+
+New Field: 
+12 
+57
+34 35 37 38 44 46
+7
+Six cards in the row #3! Cow006 takes 34 35 37 38 44.
+
 Cow005 played 48
 New Field:
 12 
 57
 46 48
 7
-Cow006 took 34 35 37 38 44
 -----
+It's Round 4, Cow005!
 Field:
 12 
 57
 46 48
 7
-Cow005: 39 56 74 84 89 98 100
+Your cards: 39 56 74 84 89 98 100
 Points = 0
-Cow005 play 39
+Choose a card to play
+39
 -----
+It's Round 4, Cow006!
 Field:
 12 
 57
@@ -101,40 +123,54 @@ Field:
 7
 Cow006: 1 6 32 59 65 73 89
 Points = 7
-Cow006 play 1
+Choose a card to play
+1
 -----
+End of Round 4
 Field:
 12 
 57
 46 48
 7
 Cow006 played 1
+Played card is too little! Cow006 chooses a row to take as a penalty
+4
+
+New Field:
+12 
+57
+46 48
+1
+Cow006 takes 7
+
 Cow005 played 39
-Cow006 choose row 4
-Cow006 took 7
 New Field:
 12 39
 57
 46 48
 1
 -----
+It's Round 5, Cow005!
 Field:
 12 39
 57
 46 48
 1
-Cow005: 56 74 84 89 98 100
+Your cards: 56 74 84 89 98 100
 Points = 0
-Cow005 play 74
+Choose a card to play
+74
 -----
+It's Round 5, Cow006!
 Field:
 12 39
 57
 46 48
 1
-Cow006: 6 32 59 65 73 89
+Your cards: 6 32 59 65 73 89
 Points = 8
-Cow006 play 6
+Choose a card to play
+6
 ....
 -----
 Final Points:
@@ -175,6 +211,7 @@ Winner: Cow005!
             "Hand": "6 32 59 65 73 89",
             "Points": "8"
         }
-    ]
+    ],
+  "Round": "5"
 }
 ```
