@@ -12,13 +12,15 @@ def test_Hand():
         a = Card(x[i])
         b.add_card(a)
         values.append(x[i])
-    a = b.__repr__()
+    a = b.__str__()
+    print(b.cards)
     assert a == str(values)
+    assert b.cards == values
     #assert b.score() in range (0, 105)
 
 
 def test_Hand_score():
-    x = random.sample(range(0, 105), 5)
+    x = random.sample(range(1, 105), 5)
     b = Hand()
     points = 0
     for i in range(len(x)):
