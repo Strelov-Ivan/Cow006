@@ -47,25 +47,25 @@ class player:
                 res = int(input())
                 if res == 1:
                     self.points += field.index0.score()
-                    field.index0 = [card]
+                    field.index0.cards = [card.value]
                     print('New field:')
                     print(field)
                     break
                 elif res == 2:
                     self.points += field.index1.score()
-                    field.index1 = [card]
+                    field.index1.cards = [card.value]
                     print('New field:')
                     print(field)
                     break
                 elif res == 3:
                     self.points += field.index2.score()
-                    field.index2 = [card]
+                    field.index2.cards = [card.value]
                     print('New field:')
                     print(field)
                     break
                 elif res == 4:
                     self.points += field.index3.score()
-                    field.index3 = [card]
+                    field.index3.cards = [card.value]
                     print('New field:')
                     print(field)
                     break
@@ -90,7 +90,7 @@ def human_choose_row():
     f = Field(Row1, Row2, Row3, Row4)
     p = player(name='Cow006', hand=han1, is_human=True)
     print('Cow006 points:', p.points)
-    p.choose_row(f, 1)
+    p.choose_row(f, Card(1))
     print('Cow006 New Points:', p.points)
 
 
