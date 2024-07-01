@@ -26,10 +26,7 @@ class Hand:
             summ += Card(i).point
         return summ
 
-    def six_cards(self, card, player):
-        a = self.score()
-        player.points += a
-        self.cards = [card]
+
 
 
 

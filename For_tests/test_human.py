@@ -28,3 +28,5 @@ def test_human():
     assert p.name == 'Bob'
     assert p.Hand.cards == values
     assert isinstance(p.actor, Human)
+
+
