@@ -83,11 +83,12 @@ def human_choose_card():
 
 def human_choose_row():
     han1 = Hand(Card(1), Card(54), Card(99), Card(101))
-    Row1 = Hand(Card(2), Card(6))
-    Row2 = Hand(Card(3), Card(7))
-    Row3 = Hand(Card(4), Card(8))
+    Row1 = Hand(Card(2), Card(6), Card(8))
+    Row2 = Hand(Card(3), Card(7), Card(9))
+    Row3 = Hand(Card(4), Card(8), Card(10))
     Row4 = Hand(Card(11), Card(55))
-    f = Field(Row1, Row2, Row3, Row4)
+
+    f = Field([Row1, Row2, Row3, Row4])
     p = player(name='Cow006', hand=han1, is_human=True)
     print('Cow006 points:', p.points)
     p.choose_row(f, Card(1))

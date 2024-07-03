@@ -15,8 +15,8 @@ class Card:
         else:
             self.point = 1
 
-    def __str__(self):
-        return f'{self.value}'
+    def __repr__(self):
+        return f'{self.value:3}'
 
     def score(self, player):
         player.points += self.point

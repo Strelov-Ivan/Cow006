@@ -5,6 +5,7 @@ def test_Card():
     x = random.sample(range(0, 105), 5)
     for i in range(len(x)):
         a = Card(x[i])
+        print(a)
         assert a.value == x[i]
 
 def test_hand_point():

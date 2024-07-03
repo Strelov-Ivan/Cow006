@@ -7,7 +7,7 @@ class Hand:
         for i in args:
             self.cards.append(i.value)
 
-    def __str__(self):
+    def __repr__(self):
         cards = []
         for i in self.cards:
             cards.append(i)
