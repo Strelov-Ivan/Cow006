@@ -20,8 +20,8 @@ class Field:
         return all_cards
 
 
-        # return (str1 + '\n' + str2 + '\n' + str3 + '\n' + str4)
-
-
     def last_cards(self):
-        return [{i: row[-1] for i, row in enumerate(self.rows)}]
+       return {i: row.cards[-1] for i, row in enumerate(self.rows)}
+
+
+

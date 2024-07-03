@@ -1,6 +1,7 @@
 from Hand_class import Hand
 from Card_class import Card
 from Field_class import Field
+import random
 class Human:
     def choose_card(self, hand: Hand) -> int:
         print('Choose a card to play')
@@ -18,12 +19,15 @@ class Human:
 class AI:
     def choose_card(self, hand: Hand) -> Card:
         cards = [c for c in hand.cards]
+        print (cards[0])
         return cards[0] if cards else None
 class player:
 
     def __init__(self, name: str, hand: Hand() = None, is_human: bool=False):
         self.name = name
         self.Hand = hand
+        if self.Hand == None:
+            self.Hand = Hand()
         self.points = 0
         if is_human:
             self.actor = Human()
@@ -42,38 +46,26 @@ class player:
         print('Field:')
         print(field)
         print(f'Played card is too little! {self.name} chooses a row to take as a penalty')
-        while True:
-            try:
-                res = int(input())
-                if res == 1:
-                    self.points += field.index0.score()
-                    field.index0.cards = [card.value]
+        if isinstance(self.actor, Human):
+            while True:
+                try:
+                    res = int(input())
+                    if res < 1 or res > 4:
+                        raise ValueError
+                    self.points += field.rows[res-1].score()
+                    field.rows[res-1].cards = [card.value]
                     print('New field:')
                     print(field)
                     break
-                elif res == 2:
-                    self.points += field.index1.score()
-                    field.index1.cards = [card.value]
-                    print('New field:')
-                    print(field)
-                    break
-                elif res == 3:
-                    self.points += field.index2.score()
-                    field.index2.cards = [card.value]
-                    print('New field:')
-                    print(field)
-                    break
-                elif res == 4:
-                    self.points += field.index3.score()
-                    field.index3.cards = [card.value]
-                    print('New field:')
-                    print(field)
-                    break
-                else:
-                    print("Field contains only four rows, choose one of them  by printing it's index: 1, 2, 3 or 4.")
-            except (ValueError, KeyError, IndexError):
-                print("Invalid choosen row. Choose a row by printing it's index: 1, 2, 3 or 4.")
-
+                except (ValueError, KeyError, IndexError):
+                    print("Invalid choosen row. Choose a row by printing it's index: 1, 2, 3 or 4.")
+        else:
+            choosen_card = random.randint(1, 4)
+            print(choosen_card)
+            self.points += field.rows[choosen_card-1].score()
+            field.rows[choosen_card - 1].cards = [card.value]
+            print('New field:')
+            print(field)
 def human_choose_card():
     han1 = Hand(Card(1), Card(55), Card(99), Card(101))
     p = player(name='Cow006', hand=han1, is_human=True)
