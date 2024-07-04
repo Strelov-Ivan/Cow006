@@ -1,11 +1,12 @@
 from Card_class import Card
 from Hand_class import Hand
-#from player_class import player
+#from player_class import Player
 
 class Field:
+    NUMBER_OF_ROWS = 4
     def __init__(self, rows = None):
         if rows is None:
-            rows = [Hand(),Hand(),Hand(),Hand()]
+            self.rows = [Hand() for _ in range(self.NUMBER_OF_ROWS)]
         else:
             self.rows = []
             for i in rows:

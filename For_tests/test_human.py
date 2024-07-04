@@ -1,5 +1,5 @@
 from All_classes.Hand_class import Hand
-from All_classes.player_class import player, AI, Human
+from All_classes.player_class import Player, AI, Human
 from All_classes.Card_class import Card
 import random
 
@@ -10,10 +10,10 @@ def test_create():
     for i in range(5):
         b.add_card(Card(x[i]))
         values.append(x[i])
-    p = player(name='Alex', hand=b)
+    p = Player(name='Alex', hand=b)
     print(b.cards)
     assert p.name == 'Alex'
-    assert p.Hand.cards == values
+    assert p.hand.cards == values
     assert isinstance(p.actor, AI)
 
 def test_human():
@@ -23,10 +23,10 @@ def test_human():
     for i in range(5):
         b.add_card(Card(x[i]))
         values.append(x[i])
-    p = player(name='Bob', hand=b, is_human=True)
+    p = Player(name='Bob', hand=b, is_human=True)
     print(b.cards)
     assert p.name == 'Bob'
-    assert p.Hand.cards == values
+    assert p.hand.cards == values
     assert isinstance(p.actor, Human)
 
 

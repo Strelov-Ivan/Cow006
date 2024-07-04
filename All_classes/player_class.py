@@ -21,13 +21,13 @@ class AI:
         cards = [c for c in hand.cards]
         print (cards[0])
         return cards[0] if cards else None
-class player:
+class Player:
 
     def __init__(self, name: str, hand: Hand() = None, is_human: bool=False):
         self.name = name
-        self.Hand = hand
-        if self.Hand == None:
-            self.Hand = Hand()
+        self.hand = hand
+        if self.hand == None:
+            self.hand = Hand()
         self.points = 0
         if is_human:
             self.actor = Human()
@@ -35,12 +35,12 @@ class player:
             self.actor = AI()
     def __repr__(self):
         cards = ''
-        for i in self.Hand.cards:
+        for i in self.hand.cards:
             cards += f'{i} '
-        return f'{self.name}: {cards}'
+        return f'Your cards: {cards}'
 
     def choose_card(self):
-        return self.actor.choose_card(self.Hand)
+        return self.actor.choose_card(self.hand)
 
     def choose_row(self, field: Field, card:Card):
         print('Field:')
@@ -68,7 +68,7 @@ class player:
             print(field)
 def human_choose_card():
     han1 = Hand(Card(1), Card(55), Card(99), Card(101))
-    p = player(name='Cow006', hand=han1, is_human=True)
+    p = Player(name='Cow006', hand=han1, is_human=True)
     print(p)
     card = p.choose_card()
     print('Choosen card:', card)
@@ -81,7 +81,7 @@ def human_choose_row():
     Row4 = Hand(Card(11), Card(55))
 
     f = Field([Row1, Row2, Row3, Row4])
-    p = player(name='Cow006', hand=han1, is_human=True)
+    p = Player(name='Cow006', hand=han1, is_human=True)
     print('Cow006 points:', p.points)
     p.choose_row(f, Card(1))
     print('Cow006 New Points:', p.points)

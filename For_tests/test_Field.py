@@ -2,7 +2,7 @@ import random
 
 from All_classes.Card_class import Card
 from All_classes.Hand_class import Hand
-from All_classes.player_class import player
+from All_classes.player_class import Player
 from All_classes.Field_class import Field
 
 def test_Field_last_cards_def():

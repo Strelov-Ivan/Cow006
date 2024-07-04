@@ -26,16 +26,17 @@ class Hand:
             summ += Card(i).point
         return summ
 
+    def __len__(self):
+        return len(self.cards)
 
 
 
 
 
-
-    # def take_cards(self, player):
+    # def take_cards(self, Player):
     #     values = [x.value for x in self.cards]
     #     a = self.score()
-    #     player.points += a
+    #     Player.points += a
     #     last_card = values[-1]
     #     self.cards = Card(last_card)
-    #     print(f'Six cards in the row #{self.index}! {player.name} takes {str(values[0:-1])}.')
+    #     print(f'Six cards in the row #{self.index}! {Player.name} takes {str(values[0:-1])}.')
